@@ -36,11 +36,11 @@ class phoneVerificationServiceImpl: phoneVerificationService{
                 return "$phoneNumber is a GLO number"
             } else if (nineMobileRegex.containsMatchIn(numberExtract)) {
                 return "$phoneNumber is a 9Mobile number"
-            } else if (smileRegex.containsMatchIn(numberExtract)) {
-                return "$phoneNumber is a Smile number"
             } else if (starcommsRegex.containsMatchIn(numberExtract)) {
                 return "$phoneNumber is a Starcomms number"
-            } else if (ntelRegex.containsMatchIn(numberExtract)) {
+            }  else if (smileRegex.containsMatchIn(numberExtract)) {
+                return "$phoneNumber is a Smile number"
+            }else if (ntelRegex.containsMatchIn(numberExtract)) {
                 return "$phoneNumber is an Ntel number"
             } else {
                 return "Invalid phone number"
