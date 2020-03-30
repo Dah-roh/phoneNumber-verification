@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HomePage</title>
+    <!-- Bootstrap core CSS -->
+    <link href="../static/css/bootstrap.css" rel="stylesheet" th:href="@{/css/bootstrap.css}"/>
+</head>
+<body >
+
+<div class="container-sm h-100 mt-5">
+    <div class="d-flex flex-column align-items-center justify-content-between">
+        <div>
+            <h2 class="text-center">Phone Number Verification</h2>
+        </div>
+        <div th:if="${#request.getParameter('q')}">
+        <div class="alert alert-success" role="alert">
+            <p th:text="${#request.getParameter('q')}"></p>
+        </div>
+        </div>
+        <div th:if="${#request.getParameter('p')}">
+            <div class="alert alert-danger" role="alert">
+                <p th:text="${#request.getParameter('p')}"></p>
+            </div>
+        </div>
+        <form action="#" th:action="@{/verify}" method="post">
+            <table class="table table-striped">
+                <tr>
+
+                   <p>Please Enter Your Phone Number: <td><input name="phoneNumber" type="text" ></td></p>
+
+                    <td><input type="submit" class="btn btn-outline-dark" value="Submit"/></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</div>
+</body>
+</html>
